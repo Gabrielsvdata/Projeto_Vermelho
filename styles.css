@@ -13,7 +13,6 @@
   background: url("/image/background.png") no-repeat center center/cover;
 }
 
-/* HEADER FLOTANTE SOBRE A IMAGEM */
 header {
   color: white;
   display: flex;
@@ -66,7 +65,6 @@ header {
   z-index: 5;
 }
 
-/* Imagem do personagem */
 .person-container img {
   margin-top: 2.5rem;
   width: 30vw;
@@ -75,7 +73,7 @@ header {
 
 .overlay-content {
   position: absolute;
-  bottom: 20%; /* você pode ajustar esse valor para mais ou menos */
+  bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -85,7 +83,6 @@ header {
   z-index: 6;
 }
 
-/* Tamanhos responsivos */
 .logo {
   width: 20vw;
   height: auto;
@@ -111,4 +108,170 @@ footer {
   color: white;
   font-size: 0.9rem;
   z-index: 5;
+}
+
+/* === BOTÃO HAMBURGUER === */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  z-index: 11;
+}
+.menu-toggle .hamburger {
+  width: 2rem;
+  height: 0.2rem;
+  background: white;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.menu-toggle .hamburger::before, .menu-toggle .hamburger::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 0.2rem;
+  background: white;
+  transition: all 0.3s ease;
+}
+.menu-toggle .hamburger::before {
+  top: -0.6rem;
+}
+.menu-toggle .hamburger::after {
+  top: 0.6rem;
+}
+
+/* === RESPONSIVIDADE TABLET === */
+@media (min-width: 48.1rem) and (max-width: 64rem) {
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 3vh 0;
+    gap: 1rem;
+    text-align: center;
+  }
+  .SectionHeader,
+  .NavBar {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .NavBar ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 0 2vw;
+  }
+  .logo {
+    width: 25vw;
+  }
+  .person-container img {
+    width: 45vw;
+    max-height: 80vh;
+  }
+  .overlay-content {
+    bottom: 12%;
+    gap: 1.5rem;
+    text-align: center;
+    padding: 0 5vw;
+  }
+  button img {
+    width: 35vw;
+  }
+  footer {
+    font-size: 0.9rem;
+    padding: 2vh 5vw;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .NavBar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 2rem 0;
+    z-index: 10;
+  }
+  .NavBar ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .NavBar.active {
+    display: flex;
+  }
+}
+/* === RESPONSIVIDADE MOBILE FIRST === */
+@media (max-width: 48rem) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 3vh 0;
+    text-align: center;
+    text-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.7);
+  }
+  .SectionHeader,
+  .NavBar {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .NavBar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .logo {
+    width: 40vw;
+  }
+  .person-container img {
+    width: 70vw;
+    max-height: 70vh;
+  }
+  .overlay-content {
+    bottom: 10%;
+    gap: 1rem;
+    padding: 0 5vw;
+    text-align: center;
+  }
+  button img {
+    width: 60vw;
+  }
+  footer {
+    padding: 2vh 5vw;
+    font-size: 0.85rem;
+    text-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.7);
+  }
+  .menu-toggle {
+    display: flex;
+  }
+  .NavBar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 2rem 0;
+    z-index: 10;
+  }
+  .NavBar ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .NavBar.active {
+    display: flex;
+  }
 }/*# sourceMappingURL=styles.css.map */
